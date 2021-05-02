@@ -14,6 +14,9 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 
 
 
+
+<br/><br/>
+
 ![image](https://user-images.githubusercontent.com/60348796/116830089-cfc13080-ab75-11eb-8118-9e69fed8ccf4.png)
 
 **Figure 2 Tissues enriched in ion channel genes vs other genes.** Fisher’s exact test was done followed by the Bonferroni correction to identify tissues in which ion channel genes are enriched (red star, p < 0.05).
