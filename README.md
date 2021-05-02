@@ -8,12 +8,22 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 
 ## Results
 
-![image](https://user-images.githubusercontent.com/60348796/116829970-3560ed00-ab75-11eb-94f5-182bfc72acc2.png)
+![image](https://user-images.githubusercontent.com/60348796/116830110-e6678780-ab75-11eb-85c4-142400611856.png)
 
 **Figure 1 Chromosome distribution of ion channel genes vs other genes.** (A) To obtain % genes reported on the y-axis for the “All ion channel genes” dataset the number of ion channel genes corresponding to a given chromosome is divided by the total number of ion channel genes in all chromosomes multiplied by 100%. 
 
-![image](https://user-images.githubusercontent.com/60348796/116829987-59bcc980-ab75-11eb-8385-fec6cd7f9503.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/60348796/116830089-cfc13080-ab75-11eb-8118-9e69fed8ccf4.png)
+
 **Figure 2 Tissues enriched in ion channel genes vs other genes.** Fisher’s exact test was done followed by the Bonferroni correction to identify tissues in which ion channel genes are enriched (red star, p < 0.05).
 
-![image](https://user-images.githubusercontent.com/60348796/116829998-68a37c00-ab75-11eb-98e9-387baf354ada.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/60348796/116830097-d51e7b00-ab75-11eb-8ce6-f644ad48904c.png)
+
 **Figure 3 Contingency table example and impact of increasing stringency metric on tissues enriched with ion channel genes. **
