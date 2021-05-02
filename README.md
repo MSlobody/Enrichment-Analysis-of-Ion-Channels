@@ -8,7 +8,7 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 
 ## Results
 
-<u> Chromosome Distribution </u>
+### Chromosome Distribution 
 <br/><br/>
 ![image](https://user-images.githubusercontent.com/60348796/116830110-e6678780-ab75-11eb-85c4-142400611856.png)
 
@@ -19,7 +19,7 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 <br/><br/>
 <br/><br/>
 
-#### Tissue Expression
+### Tissue Expression
 <br/><br/>
 
 ![image](https://user-images.githubusercontent.com/60348796/116830089-cfc13080-ab75-11eb-8118-9e69fed8ccf4.png)
