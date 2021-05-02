@@ -11,7 +11,7 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 ![image](https://user-images.githubusercontent.com/60348796/116830110-e6678780-ab75-11eb-85c4-142400611856.png)
 
 **Figure 1 Chromosome distribution of ion channel genes vs other genes.** (A) To obtain % genes reported on the y-axis for the “All ion channel genes” dataset the number of ion channel genes corresponding to a given chromosome is divided by the total number of ion channel genes in all chromosomes multiplied by 100%. 
-
+<br>
 
 
 
