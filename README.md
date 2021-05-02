@@ -8,7 +8,7 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 
 ## Results
 
-<u> #### Chromosome Distribution </u>
+<u> Chromosome Distribution </u>
 <br/><br/>
 ![image](https://user-images.githubusercontent.com/60348796/116830110-e6678780-ab75-11eb-85c4-142400611856.png)
 
