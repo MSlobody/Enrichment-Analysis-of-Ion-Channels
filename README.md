@@ -1,4 +1,4 @@
-# Enrichment-Analysis-of-Ion-Channels
+# Ion Channel Genes
 
 ## Introduction
 
