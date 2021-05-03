@@ -35,18 +35,6 @@ class chromosome_exploratory:
         chr_array = np.array(chromosome_exploratory.chromosome_binning(gene_group))
         return 100 * chr_array / np.sum(chr_array)
 
-    # Each gene category (ion channel vs other for example) has a percentage of genes distributed across each chromosome
-    # Here I am comparing that percent distribution for two gene groups to find chromosomes that relative to each gene group may be enriched in genes.
-    @staticmethod
-    def enriched_chromosomes(array1, array2, top=4):
-        fractional_difference = array1 - array2
-        df_fractional_diff = pd.DataFrame(list(zip(chromosomes, fractional_difference)),
-                                          columns=['chromosome identity', 'percent enrichment'])
-        sorted_df = df_fractional_diff.sort_values(by=['percent enrichment'])
-        sorted_df = sorted_df.nlargest(top, "percent enrichment")
-        sorted_df.reset_index(inplace=True, drop=True)
-        return sorted_df
-
 # channels and ionotropic receptors are two gene groups that form all the protein coding genes that are ion channels.
 df_total = chromosome_exploratory(total_df)
 channels = df_total.pattern_identifier("channel")
@@ -59,11 +47,6 @@ non_ic = total_df[~total_df.isin(ic)].dropna()
 
 ic_chr_dist = chromosome_exploratory.percent_chrgenes(ic)
 non_ic_chr_dist = chromosome_exploratory.percent_chrgenes(non_ic)
-
-enriched_chrs = chromosome_exploratory.enriched_chromosomes(ic_chr_dist,non_ic_chr_dist)
-enriched_chrs["percent enrichment"] = enriched_chrs["percent enrichment"].apply(lambda x: '{:.1f}'.format(x))
-display(enriched_chrs)
-
 
 #plotting data.
 N = 24
