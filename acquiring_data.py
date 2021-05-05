@@ -35,7 +35,6 @@ gencode_df = pd.DataFrame({'chromosome': chrs, 'ensembl_id': ensembl_ids, 'gene_
 # Keep only the protein coding genes, since we will be looking at ion channels and non ion channel protein-coding genes.
 gencode_df = gencode_df[gencode_df["gene_type"].str.contains('protein')]
 gencode_df = gencode_df.drop_duplicates('ensembl_id', keep='last')
-display(gencode_df)
 
 
 #Second, I extract the median tissue expression data of each gene using the GTEx database.
@@ -46,7 +45,6 @@ tissues.rename(columns = {'Name' : 'ensembl_id'},inplace = True)
 #to merge the dataframes from the GTEx and Gencode databases I need to remove the ensembl id identifier after the period.
 tissues['ensembl_id'] = [re.sub(r'\.[0-9]*','', str(x)) for x in tissues['ensembl_id']]
 merged_df = pd.merge(gencode_df,tissues, on = 'ensembl_id')
-display(merged_df)
 
 
 # Lastly, I extract the description of each gene and merge this information with the previous merged dataframe.
@@ -63,7 +61,7 @@ for record in file['response']['docs']:
 hgnc_df = pd.DataFrame({'ensembl_id': ensembl_ids,'name': names})
 
 
-#This total dataframe contains data from all three databases (Gencode, GTEx and genenames) for subsequent analysis.
+#This total dataframe contains data from all three databases (Gencode, GTEx and genenames).
 total_df = pd.merge(hgnc_df, merged_df, on='ensembl_id')
 total_df = total_df.drop(['gene_type', 'Description'], axis=1)
 total_df = total_df.drop_duplicates('ensembl_id', keep='last')
