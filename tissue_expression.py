@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from IPython.display import display
 from scipy.stats import fisher_exact
 import statsmodels.api as sm
-from chromosome_gene_distribution import ic,non_ic
+from acquiring_data import ic,non_ic
 pd.options.mode.chained_assignment = None
 
 # First, I filter for tissues where each gene is "highly" expressed, which I define as being > mean + xSD where x = 2 in this case
