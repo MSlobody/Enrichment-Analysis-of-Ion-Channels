@@ -35,16 +35,6 @@ class chromosome_exploratory:
         chr_array = np.array(chromosome_exploratory.chromosome_binning(gene_group))
         return 100 * chr_array / np.sum(chr_array)
 
-# channels and ionotropic receptors are two gene groups that form all the protein coding genes that are ion channels.
-df_total = chromosome_exploratory(total_df)
-channels = df_total.pattern_identifier("channel")
-ionotropic_receptors = df_total.pattern_identifier("nicotinic|serotonin|glycine|gamma-aminobutyric acid|5-hydroxytryptamine|glutamate|purinergic")
-ionotropic_receptors = ionotropic_receptors[ionotropic_receptors["name"].str.contains("receptor")]
-
-# ion channels are abbreviated as ic, other genes are called non_ic.
-ic = pd.concat([channels, ionotropic_receptors])
-non_ic = total_df[~total_df.isin(ic)].dropna()
-
 ic_chr_dist = chromosome_exploratory.percent_chrgenes(ic)
 non_ic_chr_dist = chromosome_exploratory.percent_chrgenes(non_ic)
 
@@ -53,11 +43,11 @@ N = 24
 ind = np.arange(N)
 fig, ax = plt.subplots(figsize = (15, 9))
 
-nonic_genes = ax.bar(ind, non_ic_chr_dist, width = 0.4, color = 'black')
-ic_genes = ax.bar(ind, ic_chr_dist, width = 0.4, color = 'blue',bottom = non_ic_chr_dist)
-ax.set_ylabel("Percentage of Genes (relative to each gene category)", size = 14)
+nonic_genes = ax.bar(ind, non_ic_fractional, width = 0.4, color = 'black')
+ic_genes = ax.bar(ind, ic_fractional, width = 0.4, color = 'blue',bottom = non_ic_fractional)
+ax.set_ylabel("% Genes (relative to each gene category)", size = 14)
 ax.set_xlabel("Chromosome Identity", size = 14)
-_ = ax.set_title("Chromosome Distribution of Genes", size = 19)
+_ = ax.set_title("Chromosome distribution of genes", size = 19)
 ax.set_xticks(ind)
 ax.set_xticklabels(tuple(chromosomes))
-ax.legend((nonic_genes[0], ic_genes[0]), ('All non ion channel genes','All ion channel genes'))
+ax.legend((nonic_genes[0], ic_genes[0]), ('Other Genes','Ion Channel Genes'))
