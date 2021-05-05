@@ -32,7 +32,7 @@ for line in csv_read:
 
 gencode_df = pd.DataFrame({'chromosome': chrs, 'ensembl_id': ensembl_ids, 'gene_type': gene_types})
 
-# Keep only the protein coding genes, since we will be looking at ion channels and non ion channel proteins
+# Keep only the protein coding genes, since we will be looking at ion channels and non ion channel protein-coding genes.
 gencode_df = gencode_df[gencode_df["gene_type"].str.contains('protein')]
 gencode_df = gencode_df.drop_duplicates('ensembl_id', keep='last')
 display(gencode_df)
@@ -49,7 +49,7 @@ merged_df = pd.merge(gencode_df,tissues, on = 'ensembl_id')
 display(merged_df)
 
 
-# Lastly, I extract the name descriptor of each gene and merge this information with the previous merged dataframe
+# Lastly, I extract the description of each gene and merge this information with the previous merged dataframe.
 with open("non_alt_loci_set_2021.json", "r", encoding='utf-8') as j:
     file = json.load(j)
 
@@ -60,13 +60,27 @@ for record in file['response']['docs']:
         names.append(record['name'])
         ensembl_ids.append(record.get('ensembl_gene_id', np.nan))
 
-hgnc_df = pd.DataFrame({'name': names, 'ensembl_id': ensembl_ids})
+hgnc_df = pd.DataFrame({'ensembl_id': ensembl_ids,'name': names})
 
 
-#This total dataframe contains data from all three databases (Gencode, GTEx and genenames) for subsequent analysis
+#This total dataframe contains data from all three databases (Gencode, GTEx and genenames) for subsequent analysis.
 total_df = pd.merge(hgnc_df, merged_df, on='ensembl_id')
 total_df = total_df.drop(['gene_type', 'Description'], axis=1)
 total_df = total_df.drop_duplicates('ensembl_id', keep='last')
 total_df.reset_index(inplace=True, drop=True)
 total_df = total_df.dropna()
 display(total_df)
+
+# The "ion channels" gene group from the HUGO Gene Nomenclature Committee was downloaded, containing 330 genes.
+# By extracting the ensembl ID of all of these genes we can identify all the ion channel genes in our total_df dataframe.
+with open("ion_channel_genes.json", "r", encoding='utf-8') as z:
+    file = json.load(z)
+    
+ensembl_ids = []
+for record in file:
+    ensembl_ids.append(record['ensemblGeneID'])
+   
+hgnc_ic_df = pd.DataFrame({'ensembl_id': ensembl_ids})
+
+ic = pd.merge(hgnc_ic_df,total_df, on = 'ensembl_id')
+non_ic = total_df[~total_df.isin(ic)].dropna()
