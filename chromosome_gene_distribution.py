@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import display
-from acquiring_data import total_df
+from acquiring_data import ic,non_ic
 
 # To analyze the chromosome distribution of ion channel genes vs other genes I created the chromosome_exploratory class
 chromosomes = [str(chrom) for chrom in list(range(1, 23))] + ["X", "Y"]
