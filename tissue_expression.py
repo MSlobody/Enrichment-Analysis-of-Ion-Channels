@@ -18,7 +18,7 @@ def tissues_high_expression(data, stringency=2):
 
     return pd.concat([descriptors, filtered], axis=1)
 
-#I filter for "highly" expressed genes from the ion channel (ic) and other genes (non_ic) categories in the chromosome_gene_distribution python file
+#I filter for "highly" expressed genes from the ion channel (ic) and other genes (non_ic) categories in the acquiring_data python file
 ic_expression = tissues_high_expression(ic)
 non_ic_expression = tissues_high_expression(non_ic)
 display(ic_expression)
