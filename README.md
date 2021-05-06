@@ -10,10 +10,12 @@
 <br/><br/>
   To carry out this analysis information about each protein-coding gene in the human genome was required, which included: chromosome identity, median tissue expression, and some description about the function of each gene (e.g. channels, receptors, kinases). Three databases contained all of this information: GENCODE, GTEx and genenames. The Ensembl ID’s were used to merge all three data sets into a single dataframe of 19128 protein-coding genes (Figure 1).
 
-![image](https://user-images.githubusercontent.com/60348796/117226578-eddf9880-ade2-11eb-976c-a7bafc8e8360.png)
+![image](https://user-images.githubusercontent.com/60348796/117227284-76ab0400-ade4-11eb-9ff3-75afba3258d0.png)
 
 **Figure 1 Dataframe containing all the information required for chromosome distribution and tissue expression analysis.** Each gene’s tissue expression is reported as the median transcripts per million (TPM) identified from RNA-seq (54 tissue types).
+
 <br/><br/>
+
   I was curious whether ion channel genes had a distinct chromosome distribution from all other protein-coding genes. To separate the dataframe in Figure 1 into these two categories a fourth data set was utilized from genenames called “ion channels”. By filtering for ion channel genes annotated in genenames the two categories emerged containing: 326 ion channel genes and 18802 other protein-coding genes.
 
   For each category the number of genes in a single chromosome was divided by the number of genes in all chromosomes and plotted as % genes on the y-axis (Figure 2). The resulting figure revealed that the chromosome distribution of these two categories was very similar (Figure 2). Ion channel genes were absent on chromosome Y and were least prevalent on chromosome 14, 18 and 22. Chromosomes 1, 11 and 12 contained the most ion channel genes, and appeared to have the largest difference between the two gene categories. 
