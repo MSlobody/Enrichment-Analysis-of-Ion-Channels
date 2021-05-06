@@ -8,11 +8,19 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 
 ## Results
 
-### Chromosome Distribution 
+To carry out this analysis information about each protein-coding gene in the human genome was required, which included: chromosome identity, median tissue expression, and some description about the function of each gene (e.g. channels, receptors, kinases). Three databases contained all of this information: GENCODE, GTEx and genenames. The Ensembl ID’s were used to merge all three data sets into a single dataframe of 19128 protein-coding genes (Figure 1).
 
-![image](https://user-images.githubusercontent.com/60348796/116938248-74a44200-ac38-11eb-93d0-60d8fb9fe25b.png)
+![image](https://user-images.githubusercontent.com/60348796/117226578-eddf9880-ade2-11eb-976c-a7bafc8e8360.png)
 
-**Figure 1 Chromosome distribution of ion channel genes vs other genes.** (A) To obtain % genes reported on the y-axis for the “All ion channel genes” dataset the number of ion channel genes corresponding to a given chromosome is divided by the total number of ion channel genes in all chromosomes multiplied by 100%. 
+**Figure 1 Dataframe containing all the information required for chromosome distribution and tissue expression analysis.** Each gene’s tissue expression is reported as the median transcripts per million (TPM) identified from RNA-seq (54 tissue types).
+
+I was curious whether ion channel genes had a distinct chromosome distribution from all other protein-coding genes. To separate the dataframe in Figure 1 into these two categories a fourth data set was utilized from genenames called “ion channels”. By filtering for ion channel genes annotated in genenames the two categories emerged containing: 326 ion channel genes and 18802 other protein-coding genes.
+
+For each category the number of genes in a single chromosome was divided by the number of genes in all chromosomes and plotted as % genes on the y-axis (Figure 2). The resulting figure revealed that the chromosome distribution of these two categories was very similar (Figure 2). Ion channel genes were absent on chromosome Y and were least prevalent on chromosome 14, 18 and 22. Chromosomes 1, 11 and 12 contained the most ion channel genes, and appeared to have the largest difference between the two gene categories. 
+
+![image](https://user-images.githubusercontent.com/60348796/117226721-3f882300-ade3-11eb-8124-cf7416cf9032.png)
+
+**Figure 2 Chromosome distribution of ion channel vs other protein-coding genes.** . 
 
 
 
@@ -21,12 +29,12 @@ With approximately 400 ion channel genes in the human genome, I thought it would
 
 ### Tissue Expression
 
-![image](https://user-images.githubusercontent.com/60348796/116830089-cfc13080-ab75-11eb-8118-9e69fed8ccf4.png)
+![image](https://user-images.githubusercontent.com/60348796/117226910-b2919980-ade3-11eb-9638-902160f89f71.png)
 
-**Figure 2 Tissues enriched in ion channel genes vs other genes.** Fisher’s exact test was done followed by the Bonferroni correction to identify tissues in which ion channel genes are enriched (red star, p < 0.05).
+**Figure 3 Tissues enriched in ion channel genes.** Fisher’s exact test was done followed by the Bonferroni correction to identify tissues in which ion channel genes are enriched (red star, p < 0.05).
 
 
 <br/><br/>
-![image](https://user-images.githubusercontent.com/60348796/116830097-d51e7b00-ab75-11eb-8ce6-f644ad48904c.png)
+![image](https://user-images.githubusercontent.com/60348796/117226979-d5bc4900-ade3-11eb-8a60-9ebe348b5182.png)
 
-**Figure 3 Contingency table example and impact of increasing stringency metric on tissues enriched with ion channel genes.**
+**Figure 4 Contingency table example and impact of increasing stringency metric on tissues enriched with ion channel genes.**
