@@ -81,5 +81,6 @@ for record in file:
 hgnc_ic_df = pd.DataFrame({'ensembl_id': ensembl_ids})
 
 #These two dataframes contain all the information needed about ion channel genes (ic) and other protein-coding genes (non_ic) for subsequent analysis!
-ic = pd.merge(hgnc_ic_df,total_df, on = 'ensembl_id')
-non_ic = total_df[~total_df.isin(ic)].dropna()
+ic = pd.merge(total_df,hgnc_ic_df,on = 'ensembl_id')
+non_ic = pd.merge(total_df,hgnc_ic_df, on = 'ensembl_id', how = 'outer', indicator = True)
+non_ic = non_ic[non_ic['_merge'] == 'left_only'].drop("_merge", axis = 1)
