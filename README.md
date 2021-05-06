@@ -22,7 +22,7 @@
 
 ![image](https://user-images.githubusercontent.com/60348796/117226721-3f882300-ade3-11eb-8124-cf7416cf9032.png)
 
-**Figure 2 Chromosome distribution of ion channel vs other protein-coding genes.** . 
+**Figure 2 Chromosome distribution of ion channel vs other protein-coding genes.** 
 
 
 
