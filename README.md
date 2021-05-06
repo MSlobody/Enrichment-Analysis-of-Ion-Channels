@@ -7,10 +7,10 @@
   With approximately 400 ion channel genes in the human genome, I thought it would be interesting to compare their chromosome distribution and tissue expression patterns to all other protein-coding genes.
 
 ## Results
-<br/><br/>
+
   To carry out this analysis information about each protein-coding gene in the human genome was required, which included: chromosome identity, median tissue expression, and some description about the function of each gene (e.g. channels, receptors, kinases). Three databases contained all of this information: GENCODE, GTEx and genenames. The Ensembl ID’s were used to merge all three data sets into a single dataframe of 19128 protein-coding genes (Figure 1).
 
-![image](https://user-images.githubusercontent.com/60348796/117227284-76ab0400-ade4-11eb-9ff3-75afba3258d0.png)
+![image](https://user-images.githubusercontent.com/60348796/117227584-27190800-ade5-11eb-86e6-1cda0115595d.png)
 
 **Figure 1 Dataframe containing all the information required for chromosome distribution and tissue expression analysis.** Each gene’s tissue expression is reported as the median transcripts per million (TPM) identified from RNA-seq (54 tissue types).
 
