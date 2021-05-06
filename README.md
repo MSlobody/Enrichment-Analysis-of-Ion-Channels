@@ -27,9 +27,12 @@
 
 
 <br/><br/>
-<br/><br/>
 
-### Tissue Expression
+
+Next, I examined whether the expression of ion channel genes is enriched in certain tissues in comparison to other genes. Each gene’s median tissue expression in 54 tissues was averaged to obtain the mean transcripts per million for each gene. Tissues were then binned as either 1, meaning their expression was higher than the mean + 2 standard deviations, or 0, where their expression was lower. Genes were then tallied for each tissue to identify the total number of “highly expressed” genes in each tissue.  A contingency table containing the number of ion channel genes vs other protein-coding genes in each tissue vs other tissues (Figure 4A) was then used to perform a Fisher’s exact test. Since 54 tissues in total were tested, I corrected for multiple hypothesis testing using the Bonferroni correction and identified seven tissues which were enriched in "highly expressed" ion channel genes (Figure 3). It is not surprising that all seven tissues that were significantly enriched in ion channel gene expression were located in the brain! Ion channels are integral components of the nervous system that facilitate nerve impulses and maintain the resting membrane potential.  Interestingly, the testis contained the most non ion channel genes that were highly expressed. This is consistent with previous reports that identified that a higher number of genes with more diverse mRNA populations were expressed in testis in comparison to other tissue types. 
+
+
+
 
 ![image](https://user-images.githubusercontent.com/60348796/117226910-b2919980-ade3-11eb-9638-902160f89f71.png)
 
@@ -37,6 +40,10 @@
 
 
 <br/><br/>
+
+The metric used to bin tissues as having high expression of a particular gene (1) or low expression (0) might be too stringent to identify enriched ion channel genes. By binning tissues that had a higher expression than the mean + 1 standard deviation three additional tissues were recovered. The amygdala, hippocampus and putamen were enriched in ion channel genes with high expression (Figure 4B). By testing an even less stringent metric (>mean are binned as 1) all 10 previously identified tissues were recovered in addition to six more. These six additional tissues included the cerebellar hemisphere, spinal cord, substantia nigra, heart – atrial appendage, kidney – cortex and pancreas (Figure 4B).
+
 ![image](https://user-images.githubusercontent.com/60348796/117226979-d5bc4900-ade3-11eb-8a60-9ebe348b5182.png)
 
 **Figure 4 Contingency table example and impact of increasing stringency metric on tissues enriched with ion channel genes.**
+ 
